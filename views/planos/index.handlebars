@@ -1,0 +1,37 @@
+<section class="container">
+    <section class="d-flex justify-content-between mt-4">
+        <h2>Página Incial dos planos</h2>
+        <a href="/planos/criar" class="btn btn-primary">Cadastrar novo plano</a>
+    </section>
+</section>
+
+<hr>
+
+<section class="my-4">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each dados}}
+            <tr>
+                <td>{{dataValues.id}}</td>
+                <td>{{dataValues.nome_do_plano}}</td>
+                <td>{{dataValues.descricao}}</td>
+                <td>{{dataValues.preco}}</td>
+                <td>
+                    <a href="" class="btn btn-danger" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#modal{{dataValues.id}}">Excluir</a>
+                </td>
+            </tr>
+            {{>modalDelete2 idItem=dataValues.id}}
+            {{/each}}
+        </tbody>
+    </table>
+</section>

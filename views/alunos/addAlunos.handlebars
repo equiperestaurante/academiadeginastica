@@ -1,0 +1,41 @@
+<section class="container">
+    <h1 class="text-center">Cadastro de Alunos</h1>
+    <form action="/alunos/store" method="post">
+        {{!-- Campo 1: Nome --}}
+        <section class="mb-2">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" class="form-control">
+        </section>
+
+        {{!-- Campo 2: idade e data de inicio --}}
+        <section class="row mb-2">
+            <div class="col-md-6">
+                <label for="idade">Idade</label>
+                <input type="text" name="idade" id="idade" class="form-control">
+            </div>
+
+            <div class="col-md-6">
+                <label for="data_inicio">Data de Início</label>
+                <input type="text" name="data_inicio" id="data_inicio" class="form-control">
+            </div>
+        </section>
+
+        {{!-- Campo 3: Selecionar o plano --}}
+        <section class="mb-2">
+            <label for="plano">Escolha o plano do aluno</label>
+            <select class="form-control" name="planos" id="planos">
+                <option value="">Escolha uma opção...</option>
+                {{#each dados}}
+                <option value="{{dataValues.id}}">{{dataValues.nome_do_plano}}</option>
+                {{/each}}
+            </select>
+        </section>
+
+        {{!-- Campo 4: Botao de envio --}}
+        <section class="mb-2">
+            <button class="btn btn-primary" type="submit">Cadastrar</button>
+        </section>
+
+
+    </form>
+</section>

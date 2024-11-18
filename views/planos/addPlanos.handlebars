@@ -1,0 +1,29 @@
+<section class="container">
+    <h1 class="text-center">Cadastro de Planos</h1>
+    <form action="/planos/inserir" method="post">
+        {{!-- Campo 1: Nome --}}
+        <section class="mb-2">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome_do_plano" id="nome_do_plano" class="form-control">
+        </section>
+
+        {{!-- Campo 2: descrição e preço --}}
+        <section class="row mb-2">
+            <div class="col-md-6">
+                <label for="idade">Descrição</label>
+                <input type="text" name="descricao" id="descricao" class="form-control">
+            </div>
+
+            <div class="col-md-6">
+                <label for="data_inicio">Preço</label>
+                <input type="text" name="preco" id="preco" class="form-control">
+            </div>
+        </section>
+        {{!-- Campo 3: Botao de envio --}}
+        <section class="mb-2">
+            <button class="btn btn-primary" type="submit">Cadastrar</button>
+        </section>
+
+
+    </form>
+</section>

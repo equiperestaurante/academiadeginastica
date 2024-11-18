@@ -1,0 +1,40 @@
+<section class="container">
+    <section class="d-flex justify-content-between mt-4">
+        <h2>Página Incial do Aluno</h2>
+        <a href="/alunos/create" class="btn btn-primary">Cadastrar novo aluno</a>
+    </section>
+</section>
+
+<hr>
+
+<section class="my-4">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Data de Início</th>
+                <th>Plano</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {{#each dados}}
+            <tr>
+                <td>{{dataValues.id}}</td>
+                <td>{{dataValues.nome}}</td>
+                <td>{{dataValues.idade}}</td>
+                <td>{{dataValues.data_inicio}}</td>
+                <td>{{plano.dataValues.nome_do_plano}}</td>
+                <td>
+                    <a href="" class="btn btn-danger" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#modal{{dataValues.id}}">Excluir</a>
+                </td>
+            </tr>
+            {{>modalDelete idItem=dataValues.id}}
+            {{/each}}
+        </tbody>
+    </table>
+</section>
